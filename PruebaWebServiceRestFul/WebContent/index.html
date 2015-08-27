@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="scripts/shared/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/main.css">
+
+  </head>
+  <body ng-app="pruebaAngularApp">
+   <div class="container">
+     <div class="header">
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <a class="navbar-brand" href="/">Main</a>
+            <ul class="nav navbar-nav">
+              <li><a href="#/registro">Registro</a>
+
+              </li>
+
+
+            </ul>
+
+          </div>
+      </nav>
+    </div>
+  </div>
+
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view=""></div>
+	<script type="text/javascript"  src="scripts/shared/angular/angular.js"></script>
+    <script  type="text/javascript" src="scripts/shared/jquery/jquery.js"></script>
+    <script  type="text/javascript" src="scripts/shared/bootstrap/js/bootstrap.js"></script>
+    <script  type="text/javascript" src="scripts/shared/angular-route/angular-route.js"></script>
+    <script  type="text/javascript" src="scripts/shared/angular-bootstrap/ui-bootstrap-tpls-0.13.3.min.js"></script>
+  
+ 
+   
+    <!-- Modules -->
+    <script src="scripts/app.js"></script>
+    <!-- Controllers -->
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/registro.js"></script>
+    <!-- Services -->
+    <script src="scripts/services/myServices.js"></script>
+
+
+    
+   
+
+  </body>
+
