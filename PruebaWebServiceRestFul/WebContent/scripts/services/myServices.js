@@ -17,12 +17,19 @@
 
         };
         
-     dataFactory.getUsuario = function (nombre) {
+    dataFactory.getUsuario = function (nombre) {
 
     	    console.log(nombre);
             return $http.get('http://localhost:8080/PruebaWebServiceRestFul/rest/UsuarioService/usuarioPrueba/'+nombre );
 
         };
+
+    dataFactory.login = function (datos) {
+
+            console.log(datos);
+            return $http.post('http://localhost:8080/PruebaWebServiceRestFul/rest/UsuarioService/login', datos);
+
+        };   
     /* var urlBase = '/api/customers';
     var dataFactory = {};
 

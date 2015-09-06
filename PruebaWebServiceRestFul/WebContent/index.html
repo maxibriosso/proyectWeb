@@ -6,31 +6,44 @@
 
   </head>
   <body ng-app="pruebaAngularApp">
-   <div class="container">
-     <div class="header">
-      <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <a class="navbar-brand" href="/">Main</a>
-            <ul class="nav navbar-nav">
-              <li><a href="#/registro">Registro</a>
-
-              </li>
-
-
-            </ul>
-
-          </div>
-      </nav>
-    </div>
-  </div>
+ 
 
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
-	<script type="text/javascript"  src="scripts/shared/angular/angular.js"></script>
+    <div ng-controller="AppCtrl">
+
+      
+        <div class="header" ng-show="usrLogin.estaConectado">
+          <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container">
+                <a class="navbar-brand" href="/main">Main</a>
+                <ul class="nav navbar-nav">
+                  <li><a href="/registro">Registro</a>
+
+                  </li>
+
+
+                </ul>
+                <form class="navbar-form navbar-right" >
+                  <button class="btn btn-danger" ng-click="salir()">Salir</button>
+                </form>
+
+              </div>
+          </nav>
+        </div>
+      
+
+      <div class="container">
+        <div  ng-view=""></div>
+      </div>
+
+    </div>
+
+    <script type="text/javascript"  src="scripts/shared/angular/angular.js"></script>
     <script  type="text/javascript" src="scripts/shared/jquery/jquery.js"></script>
     <script  type="text/javascript" src="scripts/shared/bootstrap/js/bootstrap.js"></script>
     <script  type="text/javascript" src="scripts/shared/angular-route/angular-route.js"></script>
+    <script  type="text/javascript" src="scripts/shared/angular-cookies/angular-cookies.js"></script>
     <script  type="text/javascript" src="scripts/shared/angular-bootstrap/ui-bootstrap-tpls-0.13.3.min.js"></script>
   
  
@@ -38,6 +51,8 @@
     <!-- Modules -->
     <script src="scripts/app.js"></script>
     <!-- Controllers -->
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/appController.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/registro.js"></script>
     <!-- Services -->

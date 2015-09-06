@@ -2,6 +2,7 @@ package servicios;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -15,17 +16,12 @@ import javax.ws.rs.core.Response;
 
 
 
-
-
-
-
-
-
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
+
 
 import controladores.IUsuarioController;
 import dominio.Usuario;
@@ -112,6 +108,33 @@ public class UsuarioService {
 		 return Response.ok(json).build();
 	
 		
+	}
+	
+	@POST
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("/login")
+	public Response login(String datos) {
+
+		String respuesta;
+		System.out.println("Entre Login ");
+		System.out.println("Usuario - " + datos);
+		
+		JSONObject jsonObj = new JSONObject();
+		
+		try {
+			jsonObj.put("Login","true");
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			
+			e.printStackTrace();
+			
+		}
+
+		respuesta=jsonObj.toString();
+		return Response.ok().entity(respuesta).build();
+
+	
 	}
 	
 	
